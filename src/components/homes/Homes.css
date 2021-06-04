@@ -1,0 +1,42 @@
+.listingsContainer.container-fluid {
+  display: inline-grid;
+  justify-content: center;
+  font-size: 0.85rem;
+  grid-template-columns: repeat(3, 475px);
+  grid-auto-flow: row dense;
+  justify-items: center;
+}
+
+.card {
+  width: 420px;
+  height: 375px;
+  margin: 0.75rem 0;
+  display: inline-block;
+  -webkit-box-shadow: 0px 2px 2px rgb(187, 184, 184);
+  -moz-box-shadow: 0px 2px 2px rgb(187, 184, 184);
+  box-shadow: 0px 2px 2px rgb(187, 184, 184);
+}
+
+.card img {
+    height: 252px;
+    border-radius: 0%;
+}
+
+.card-subtitle.card-text {
+    font-weight: 350;
+    margin-bottom: .5rem;
+}
+
+.loadMore {
+    margin: 1.5rem;
+    height: 40px;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loadMore button {
+      width: 10rem;
+      color: white;
+  }
