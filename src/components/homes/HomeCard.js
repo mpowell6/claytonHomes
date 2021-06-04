@@ -13,11 +13,11 @@ const HomeCard = (listing) => {
         onError={(e) => {
           e.target.onerror = null;
           e.target.src =
-            "https://d132mt2yijm03y.cloudfront.net/dealer/1912/profile/Search-Result-Icon/clayton-homes-of-layton-mh-search-logo.png";
+            "/resources/failedLoadImage.jpg";
         }}
       />
       <Card.Body>
-        <Card.Title>{listing.home.homeName}</Card.Title>
+        <h2>{listing.home.homeName}</h2>
         <Card.Text className="card-subtitle">
           Starting in the{" "}
           <CurrencyFormatter

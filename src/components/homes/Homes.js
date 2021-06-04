@@ -63,8 +63,8 @@ class Homes extends React.Component {
     return (
       <div className="Listings">
         <Container className="sort" fluid>
-          <p>{listings.length} homes available</p>
-          <form>
+          <p className="listingAvailable">{listings.length} homes available</p>
+          <form className="sortForm">
             <label>SORT BY</label>
             <select onChange={(val) => this.sortListings(val.target.value)}>
               <option value="default"></option>

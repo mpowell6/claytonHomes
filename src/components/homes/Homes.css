@@ -1,13 +1,16 @@
 .sort.container-fluid {
-  display: flex;
-  margin-top: auto;
-  padding: 1.5em 0;
-  justify-content: space-between;
-  width: 65%;
+  margin: 2em 0 !important;
+  display: grid;
 }
 
-.sort.container-fluid p {
-  font-size: 1.25em;
+.listingAvailable {
+  padding: 0 0.75em;
+  font-size: 2em;
+}
+
+.sortForm {
+  align-self: center;
+  padding: 0 1.75rem;
 }
 
 label {
@@ -23,105 +26,112 @@ select {
 }
 
 .listingsContainer.container-fluid {
-  display: inline-grid;
-  justify-content: center;
-  grid-template-columns: repeat(3, 475px);
-  grid-auto-flow: row dense;
-  justify-items: center;
+  display: grid;
 }
 
 .card {
-  width: 420px;
-  height: 375px;
-  margin: 0.75em 0;
-  display: inline-block;
-  -webkit-box-shadow: 0px 2px 2px rgb(187, 184, 184);
-  -moz-box-shadow: 0px 2px 2px rgb(187, 184, 184);
-  box-shadow: 0px 2px 2px rgb(187, 184, 184);
-}
-
-.card img {
-  height: 252px;
-  border-radius: 0%;
+  margin: 1.5em 0;
+  box-shadow: 0px 2px 0px rgb(187, 184, 184);
 }
 
 .card-subtitle.card-text {
-  font-weight: 350;
-  margin-bottom: 0.5em;
+  font-weight: 300;
+}
+
+.card img {
+  height: 275px;
+  border-radius: 0%;
 }
 
 .loadMore {
-  margin: 4em 0;
-  height: 40px;
-  padding-bottom: 2em;
-  display: flex;
+  margin: 3em 0;
+  display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center;
 }
 
-.loadMore button {
-  width: 325px;
-  height: 3.5em;
-  color: white;
+.btn.btn-primary {
+  border-radius: 5%;
+  font-size: 1.75em;
+  width: 12em;
+  height: 2.5em;
 }
 
-.btn {
-  font-size: 1.5em;
-}
-
-/*For Low Resolution Desktop*/
-@media screen and (min-width: 1440px) and (max-width: 1680px) {
+/*For Mobile View*/
+@media screen and (min-width: 375px) {
   .sort.container-fluid {
-    display: flex;
-    margin-top: auto;
-    justify-content: space-between;
-    padding: 1.5em 0;
+    grid-template-columns: repeat(1, 1fr);
   }
-
-  .card {
-    width: 350px;
-    margin: 1em 1em;
+  .listingAvailable {
+    justify-self: center;
   }
-}
-
-/*For Tablets*/
-@media screen and (min-width: 768px) and (max-width: 1439px) {
-  .sort.container-fluid {
-    display: flex;
-    margin-top: auto;
-    padding: 1.5em 0;
-    justify-content: space-between;
+  .sortForm {
+    grid-column: 1;
+    justify-self: center;
   }
-
   .listingsContainer.container-fluid {
-    grid-template-columns: repeat(2, 385px);
-  }
-
-  .card {
-    width: 350px;
-  }
-}
-
-/*For Mobile Devices*/
-@media screen and (min-width: 375px) and (max-width: 767px) {
-  .sort.container-fluid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(1, auto);
     justify-content: center;
-    padding: 1.2em;
   }
-
-  form {
-    display: flex;
-    text-align: center;
-  }
-
-  .listingsContainer.container-fluid {
-    grid-template-columns: repeat(1, 350px);
-  }
-
   .card {
     width: 350px;
+  }
+  .card-text p {
+    font-size: 1.15em;
+  }
+}
+
+/*For Tablet View*/
+@media screen and (min-width: 765px) {
+  .listingsContainer.container-fluid {
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+  }
+  .card {
+    width: 365px;
+    margin: 1em 0.5em;
+  }
+  .card-text {
+    font-size: 1.25em;
+  }
+}
+
+/*For Hi-Res Tablet/Low-Res Desktop*/
+@media screen and (min-width: 1024px) {
+  .sort.container-fluid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .listingAvailable {
+    grid-column: 1;
+    justify-self: left;
+    padding-left: 2%;
+  }
+  .sortForm {
+    grid-column: 3;
+    justify-self: right;
+    padding-right: 3%;
+  }
+  .listingsContainer.container-fluid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+  .card {
+    width: 325px;
+    margin: 1em auto;
+  }
+  .card-text {
+    font-size: 1.1em;
+  }
+}
+
+/*Desktop View*/
+@media screen and (min-width: 1440px) {
+  .listingsContainer.container-fluid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+  .card {
+    width: 450px;
+    height: 425px;
   }
 }
