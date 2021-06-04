@@ -32,14 +32,19 @@ class Homes extends React.Component {
 
   sortListings(sortOption) {
     let sortedList;
-    if (sortOption === "lowToHigh") {
-      sortedList = this.state.homeListings.sort((a, b) => {
-        return a.startingPrice - b.startingPrice;
-      });
-    } else if (sortOption === "highToLow") {
-      sortedList = this.state.homeListings.sort((a, b) => {
-        return b.startingPrice - a.startingPrice;
-      });
+    switch (sortOption) {
+      case "lowToHigh":
+        sortedList = this.state.homeListings.sort((a, b) => {
+          return a.startingPrice - b.startingPrice;
+        });
+        break;
+      case "highToLow":
+        sortedList = this.state.homeListings.sort((a, b) => {
+          return b.startingPrice - a.startingPrice;
+        });
+        break;
+      default:
+        sortedList = this.state.homeListings;
     }
     this.setState({
       homeListings: sortedList,
@@ -57,19 +62,21 @@ class Homes extends React.Component {
 
     return (
       <div className="Listings">
-        <p>{listings.length} homes available</p>
-        <form>
-          <label>SORT BY</label>
-          <select onChange={(val) => this.sortListings(val.target.value)}>
-            <option value="default"></option>
-            <option value="lowToHigh" onChange={this.sortLowToHigh}>
-              Price: Low to High
-            </option>
-            <option value="highToLow" onChange={this.sortHighToLow}>
-              Price: High to Low
-            </option>
-          </select>
-        </form>
+        <Container className="sort" fluid>
+          <p>{listings.length} homes available</p>
+          <form>
+            <label>SORT BY</label>
+            <select onChange={(val) => this.sortListings(val.target.value)}>
+              <option value="default"></option>
+              <option value="lowToHigh" onChange={this.sortLowToHigh}>
+                Price: Low to High
+              </option>
+              <option value="highToLow" onChange={this.sortHighToLow}>
+                Price: High to Low
+              </option>
+            </select>
+          </form>
+        </Container>
         <Container className="listingsContainer" fluid>
           {this.state.homeListings.map((listing, index) => {
             if (index < this.state.counter) {

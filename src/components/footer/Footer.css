@@ -1,4 +1,6 @@
 .Footer {
+    position: sticky;
+    top: 100%;
     background-color: gray;
     color: white;
     height: 5rem;
@@ -10,3 +12,9 @@
 .Footer p {
     margin: 2.5rem 2.5rem;
 }
+
+@media (min-width: 375px) {
+    .Footer p {
+        margin-right: 7rem;
+    }
+  }
