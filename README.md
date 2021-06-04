@@ -2,6 +2,8 @@
 
 This project is to demonstrate dynamic home listings loaded based on a given Object. Application has been rendered to view under mobile, tablet, lower-resolution desktops, and higher-resolution desktop views.
 
+To view a live demonstration of this application: https://nifty-morse-f348ba.netlify.app/ 
+
 ## Available Scripts
 
 In the project directory, you can run:
