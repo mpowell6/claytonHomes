@@ -50,13 +50,6 @@ select {
   align-content: center;
 }
 
-.btn.btn-primary {
-  border-radius: 5%;
-  font-size: 1.75em;
-  width: 12em;
-  height: 2.5em;
-}
-
 /*For Mobile View*/
 @media screen and (min-width: 375px) {
   .sort.container-fluid {
@@ -79,6 +72,11 @@ select {
   .card-text p {
     font-size: 1.15em;
   }
+  .btn.btn-primary {
+    font-size: 1.75em;
+    width: 9em;
+    height: 1.75em;
+  }
 }
 
 /*For Tablet View*/
@@ -93,6 +91,11 @@ select {
   }
   .card-text {
     font-size: 1.25em;
+  }
+  .btn.btn-primary {
+    font-size: 1.75em;
+    width: 9em;
+    height: 1.75em;
   }
 }
 
@@ -133,5 +136,10 @@ select {
   .card {
     width: 450px;
     height: 425px;
+  }
+  .btn.btn-primary {
+    font-size: 1.75em;
+    width: 12em;
+    height: 2.5em;
   }
 }
